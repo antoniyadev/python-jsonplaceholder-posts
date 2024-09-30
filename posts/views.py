@@ -11,7 +11,8 @@ def index(request):
     posts = response.json()
 
     # Paginate posts
-    paginator = Paginator(posts, 10)  # Show 10 posts per page
+    per_page = 10
+    paginator = Paginator(posts, per_page)
     page = request.GET.get('page')
 
     try:
@@ -25,8 +26,6 @@ def index(request):
 
     return render(request, 'posts/index.html', {'posts': paginated_posts})
 
-# Fetch and display comments for a specific post
-
 
 def show(request, post_id):
     post_response = requests.get(
@@ -37,6 +36,7 @@ def show(request, post_id):
     post = post_response.json()
     comments = comments_response.json()
 
+    # get author's name by spliting author's email by @
     for comment in comments:
         comment['author_name'] = comment['email'].split('@')[0]
 
