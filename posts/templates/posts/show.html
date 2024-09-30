@@ -1,0 +1,46 @@
+{% extends 'layout.html' %} {% block page_title %}All Posts{% endblock %} 
+{% block content %}
+    <h1 class="text-center my-4 text-4xl uppercase text-gray-900 underline underline-offset-4 decoration-cyan-500">{{ post.title }}</h1>
+    <p class="mx-auto text-center m-4 max-w-xl">{{ post.body | capfirst }}</p>
+
+    <div class="m-4 p-4 rounded-lg border border-cyan-500">
+    <h2 class="mx-4 text-2xl uppercase text-gray-900 underline underline-offset-4 decoration-cyan-500">Comments</h2>
+      {% for comment in comments %}
+      <article class="px-3 py-2 text-base bg-white rounded-lg">
+        <footer class="flex justify-between items-center ">
+            <div class="flex items-center">
+                <p class="inline-flex items-center mr-3 text-sm text-cyan-500 font-semibold">{{ comment.author_name }}</p>
+                <p class="text-sm text-gray-600">
+                  {{ comment.email }}</p>
+            </div>
+  
+           
+        </footer>
+        <p class="">{{ comment.body }}</p>
+  
+    </article>
+      {% endfor %}
+    </div>
+  
+    <a
+    href="{% url 'posts_index' %}"
+    class="flex items-center justify-center px-4 h-10 m-4 font-medium bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 "
+  >
+    <svg
+      class="w-3.5 h-3.5 me-2 rtl:rotate-180 text-cyan-500"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 14 10"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M13 5H1m0 0 4 4M1 5l4-4"
+      />
+    </svg>
+    Back to Posts
+  </a>
+{% endblock %}
