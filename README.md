@@ -5,7 +5,7 @@ Django Application to Display Posts and Comments from JSON Placeholder API
 ![Screenshot from 2024-09-29 14-39-33](https://github.com/user-attachments/assets/77f471f4-7b11-4adc-9410-f58d92f41521)
 
 ### Show post page
-![Screenshot from 2024-09-29 19-38-43](https://github.com/user-attachments/assets/dd9b982e-d7de-4b71-9b46-7e9ac7fb88af)
+![Screenshot from 2024-09-29 19-38-43](https://github.com/user-attachments/assets/43403f05-21d1-4cb3-b3c2-4f687d62e58f)
 
 # Main features
 - Fetches all posts from the JSONPlaceholder API.
